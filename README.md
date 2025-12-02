@@ -1,9 +1,32 @@
+<div align="center">
+  <img src="public/banner.png" alt="SkinSense Banner" width="100%">
+</div>
 # SkinSense — Your Skin. Your Science.
 
 AI-powered skincare routine generator.  
 Personalized routines, ingredient analysis, and real-time skin insights using computer vision and machine learning.
 
 Live Demo: https://skinsense-landing.vercel.app
+
+## Screenshots
+
+### Hero Section
+<img src="public/screenshots/hero.png" width="900">
+
+### How It Works
+<img src="public/screenshots/howitworks.png" width="900">
+
+### Features Section
+<img src="public/screenshots/features.png" width="900">
+
+### Pricing / Freemium Section
+<img src="public/screenshots/freenium.png" width="900">
+
+### Before and After Results
+<img src="public/screenshots/beforeandafter.png" width="900">
+
+### Waitlist Section
+<img src="public/screenshots/waitlist.png" width="900">
 
 ---
 
