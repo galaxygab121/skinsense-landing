@@ -1,18 +1,9 @@
-<div align="center">
-  <h1>SkinSense — Your Skin. Your Science.</h1>
-  <p><strong>AI-powered skincare routine generator.</strong><br/>
-  Personalized routines, ingredient analysis, and real-time skin insights using computer vision & ML.</p>
+# SkinSense — Your Skin. Your Science.
 
-  <a href="https://skinsense-landing.vercel.app" target="_blank">
-    🔗 Live Demo
-  </a>
-  ·
-  <a href="#-features">Features</a>
-  ·
-  <a href="#-tech-stack">Tech Stack</a>
-  ·
-  <a href="#%EF%B8%8F-setup--installation">Setup</a>
-</div>
+AI-powered skincare routine generator.  
+Personalized routines, ingredient analysis, and real-time skin insights using computer vision and machine learning.
+
+Live Demo: https://skinsense-landing.vercel.app
 
 ---
 
@@ -20,59 +11,88 @@
 
 SkinSense is an AI-powered skincare recommendation engine that analyzes your skin, builds personalized AM/PM routines, evaluates ingredients, and tracks progress over time.
 
-This repo contains the **SkinSense Landing Page**, designed to collect waitlist signups and showcase the product vision.
+This repository contains the SkinSense Landing Page, designed to collect waitlist signups and showcase the product vision.
 
-The live site is deployed on **Vercel** with a backend API route storing waitlist entries in **Firebase Firestore**.
+The live site is deployed on Vercel, using a Next.js backend API route to store waitlist entries in Firebase Firestore.
 
 ---
 
 ## Features
 
 ### AI-Powered Skincare Engine (coming soon)
-- Computer-vision skin scan  
-- Ingredient breakdowns  
-- Personalized routines  
-- AM/PM flow recommendations  
+- Skin analysis using computer vision  
+- Ingredient breakdowns and comedogenic profiling  
+- Personalized AM/PM routines  
 - Environmental skin score (UV, humidity, pollution)  
-- Long-term skin tracking
+- Skin tracking and progress visualization  
 
 ### Landing Page Features (this repo)
-- Fully responsive, pastel-themed UI (brand identity matched)
-- Hero section + product mockups
-- How It Works flow
-- Features grid + Pricing tiers
-- Before/After results gallery
-- Launch promo video section
-- **Waitlist signup system connected to Firebase Firestore**
-- Gradient cards, shadows, glassmorphism UI
-- Deployed to Vercel
+- Fully responsive pastel-themed UI  
+- Hero section with app previews  
+- “How It Works” flow  
+- Features grid  
+- Pricing tiers (Free, Pro, Premium)  
+- Before/After results gallery  
+- Launch video section  
+- Functional waitlist system connected to Firebase Firestore  
+- Vercel + Next.js App Router  
+- TailwindCSS design system  
 
 ---
 
 ## Tech Stack
 
 ### Frontend
-- **Next.js (App Router)**
-- **React**
-- **TailwindCSS**
+- Next.js (App Router)
+- React
+- TailwindCSS
 
 ### Backend
-- **Next.js API Routes**
-- **Firebase Firestore**
+- Next.js API Routes (server-side)
+- Firebase Firestore
 
 ### Deployment
-- **Vercel**
+- Vercel
 
 ---
 
-## Firebase Waitlist Integration
+## Setup and Installation
 
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/galaxygab121/skinsense-landing.git
+cd skinsense-landing
+2. Install dependencies
+npm install
+3. Add Firebase environment variables
+Create a file named .env.local in the project root:
+NEXT_PUBLIC_FIREBASE_API_KEY=yourKey
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=yourDomain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=yourProjectId
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=yourBucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=yourSenderId
+NEXT_PUBLIC_FIREBASE_APP_ID=yourAppId
+4. Start development server
+npm run dev
+5. Open in browser
+Visit:
+http://localhost:3000
+Firebase Waitlist Integration
 Each waitlist entry saved in Firestore includes:
-
-```json
 {
   "email": "example@gmail.com",
-  "createdAt": <server timestamp>,
+  "createdAt": "<server timestamp>",
   "source": "landing-page"
 }
+API Route Used
+Location: app/api/waitlist/route.ts
+This server-side route:
 
+Accepts POST requests from the waitlist form
+Validates that the provided email is correctly formatted
+Initializes Firebase using the environment variables
+Inserts the email into Firestore under the waitlist collection
+Returns a JSON success or error response
+Runs only on the server (never exposed to the browser)
+This ensures privacy, security, and proper database handling for user signups.
